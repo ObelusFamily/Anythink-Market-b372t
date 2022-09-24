@@ -33,7 +33,9 @@ const Banner = (props) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const showSearchBar = () => {
-    setIsSearchOpen(true);
+    setTimeout(() => {
+      setIsSearchOpen(true);
+    }, 1000);
   };
   return (
     <div className="banner text-white">
