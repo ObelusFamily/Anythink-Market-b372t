@@ -51,16 +51,15 @@ const Banner = (props) => {
               get
             </span>
           </span>
-          {isSearchOpen ? (
-            <input
-              type="text"
-              id="search-box"
-              placeholder="What is it that you truly desire?"
-              onChange={searchItems}
-            />
-          ) : (
-            <></>
-          )}
+
+          <input
+            type="text"
+            id="search-box"
+            placeholder="What is it that you truly desire?"
+            onChange={searchItems}
+            style={{ display: isSearchOpen ? "inline-block" : "none" }}
+          />
+
           <span> the cool stuff.</span>
         </div>
       </div>
