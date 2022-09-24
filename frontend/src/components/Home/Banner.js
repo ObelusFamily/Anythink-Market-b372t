@@ -21,7 +21,7 @@ const Banner = (props) => {
 
     const lengthOfInput = value.length;
 
-    if (value && lengthOfInput > 3) {
+    if (value && lengthOfInput >= 3) {
       props.filterItemsByTitle(value, agent.Items.byTitle(value));
     }
 
