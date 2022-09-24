@@ -32,8 +32,7 @@ const Banner = (props) => {
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  const showSearchBar = (e) => {
-    e.preventDefault();
+  const showSearchBar = () => {
     setIsSearchOpen(true);
   };
   return (
@@ -52,13 +51,15 @@ const Banner = (props) => {
             </span>
           </span>
 
-          <input
-            type="text"
-            id="search-box"
-            placeholder="What is it that you truly desire?"
-            onChange={searchItems}
-            style={{ display: isSearchOpen ? "inline-block" : "none" }}
-          />
+          {isSearchOpen && (
+            <input
+              type="text"
+              id="search-box"
+              placeholder="What is it that you truly desire?"
+              onChange={searchItems}
+              style={{ display: isSearchOpen ? "inline-block" : "none" }}
+            />
+          )}
 
           <span> the cool stuff.</span>
         </div>
