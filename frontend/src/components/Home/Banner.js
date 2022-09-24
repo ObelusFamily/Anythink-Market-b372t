@@ -53,21 +53,28 @@ const Banner = (props) => {
             </span>
           </span>
 
-          {isSearchOpen && (
-            <input
-              type="text"
-              id="search-box"
-              placeholder="What is it that you truly desire?"
-              onChange={searchItems}
-              style={{ display: isSearchOpen ? "inline-block" : "none" }}
-            />
-          )}
+          <SearchInput searchItems={searchItems} shouldShow={isSearchOpen} />
 
           <span> the cool stuff.</span>
         </div>
       </div>
     </div>
   );
+};
+
+const SearchInput = ({ searchItems, shouldShow }) => {
+  if (shouldShow) {
+    return (
+      <input
+        type="text"
+        id="search-box"
+        placeholder="What is it that you truly desire?"
+        onChange={searchItems}
+      />
+    );
+  }
+
+  return <></>;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Banner);
