@@ -25,7 +25,7 @@ const Banner = (props) => {
       props.filterItemsByTitle(value, agent.Items.byTitle(value));
     }
 
-    if (!value) {
+    if (!value || lengthOfInput < 3) {
       props.filterItemsByTitle("", agent.Items.all());
     }
   };
