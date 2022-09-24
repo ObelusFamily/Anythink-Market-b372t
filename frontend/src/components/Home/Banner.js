@@ -43,18 +43,13 @@ const Banner = (props) => {
         <div>
           <span id="get-part">
             A place to{" "}
-            <button
-              style={{
-                outline: "none",
-                background: "none",
-                border: "none",
-                padding: "0",
-              }}
+            <span
+              style={{ cursor: "pointer" }}
               className="text-white"
               onClick={showSearchBar}
             >
               get
-            </button>
+            </span>
           </span>
           {isSearchOpen && (
             <input
