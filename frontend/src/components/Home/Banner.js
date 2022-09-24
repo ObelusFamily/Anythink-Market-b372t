@@ -9,8 +9,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  filterItemsByTitle: (payload) =>
-    dispatch({ type: APPLY_TITLE_FILTER, payload }),
+  filterItemsByTitle: (title, payload) =>
+    dispatch({ type: APPLY_TITLE_FILTER, title, payload }),
 });
 
 const Banner = (props) => {
@@ -21,12 +21,12 @@ const Banner = (props) => {
 
     const lengthOfInput = value.length;
 
-    if (value && lengthOfInput > 3) {
-      props.filterItemsByTitle(agent.Items.byTitle(value));
+    if (value && lengthOfInput >= 3) {
+      props.filterItemsByTitle(value, agent.Items.byTitle(value));
     }
 
-    if (!value) {
-      props.filterItemsByTitle(agent.Items.all());
+    if (!value || lengthOfInput < 3) {
+      props.filterItemsByTitle("", agent.Items.all());
     }
   };
   return (
