@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../imgs/logo.png";
 import { connect } from "react-redux";
 import { APPLY_TITLE_FILTER } from "../../constants/actionTypes";
-import { agent } from "superagent";
+import agent from "../../agent";
 
 const mapStateToProps = (state) => ({
   ...state.itemList
@@ -22,9 +22,13 @@ const Banner = (props) => {
 
     const lengthOfInput = value.length
 
-    if(lengthOfInput > 3){
-      props.filterItemsByTitle(agent.Items.byTitle(value))
-     
+    
+    if(value && lengthOfInput > 3){
+      props.filterItemsByTitle(agent.Items.all(0,value))
+    }
+    
+    if(!value){
+      props.filterItemsByTitle(agent.Items.all())
     }
   }
   return (
