@@ -10,20 +10,21 @@ const ItemList = (props) => {
   if (props.items.length === 0) {
     if (props.searchTitle) {
       return (
-        <div
-          id="empty"
-          className="mx-auto text-center py-5 mt-4"
-          style={{
-            width: "100%",
-            maxWidth: "568px",
-            backgroundColor: "rgba(85,22,120,0.7)",
-          }}
-        >
-          <i className="ion-sad-outline display-1"></i>
-          <p>
-            No items found for "<b>{props.searchTitle}</b>"
-          </p>
-        </div>
+        <div />
+        // <div
+        //   id="empty"
+        //   className="mx-auto text-center py-5 mt-4"
+        //   style={{
+        //     width: "100%",
+        //     maxWidth: "568px",
+        //     backgroundColor: "rgba(85,22,120,0.7)",
+        //   }}
+        // >
+        //   <i className="ion-sad-outline display-1"></i>
+        //   <p>
+        //     No items found for "<b>{props.searchTitle}</b>"
+        //   </p>
+        // </div>
       );
     }
     return <div className="py-4 no-items">No items are here... yet.</div>;
