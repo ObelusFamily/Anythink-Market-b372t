@@ -33,25 +33,15 @@ const Banner = (props) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const showSearchBar = () => {
-    if (!isSearchOpen) {
-      setIsSearchOpen(true);
-    }
+    setIsSearchOpen(true);
   };
   return (
     <div className="banner text-white">
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div>
-          <span id="get-part">
-            A place to{" "}
-            <span
-              style={{ cursor: "pointer" }}
-              className="text-white"
-              onClick={showSearchBar}
-              id="get-part"
-            >
-              get
-            </span>
+          <span id="get-part" onClick={showSearchBar}>
+            A place to get
           </span>
 
           <SearchInput searchItems={searchItems} shouldShow={isSearchOpen} />
@@ -75,7 +65,7 @@ const SearchInput = ({ searchItems, shouldShow }) => {
     );
   }
 
-  return <></>;
+  return null;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Banner);
