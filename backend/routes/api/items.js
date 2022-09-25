@@ -146,14 +146,7 @@ router.post("/", auth.required, function (req, res, next) {
 				return res.sendStatus(401)
 			}
 
-			const reqItem = req.body.item
-
-			if (reqItem.image === "") {
-				reqItem.image =
-					"https://res.cloudinary.com/aremusmog/image/upload/v1591005556/wzirvt6pxao73k7m4uja.jpg"
-			}
-
-			var item = new Item(reqItem)
+			var item = new Item(req.body.item)
 
 			item.seller = user
 
