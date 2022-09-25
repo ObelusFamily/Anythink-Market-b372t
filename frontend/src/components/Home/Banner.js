@@ -48,6 +48,7 @@ const Banner = (props) => {
               style={{ cursor: "pointer" }}
               className="text-white"
               onClick={showSearchBar}
+              id="get-part"
             >
               get
             </span>
