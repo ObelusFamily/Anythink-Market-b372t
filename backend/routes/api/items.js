@@ -149,7 +149,8 @@ router.post("/", auth.required, function (req, res, next) {
 			const reqItem = req.body.item
 
 			if (reqItem.image === "") {
-				reqItem.image = "http://localhost:3001/placeholder.png"
+				reqItem.image =
+					"https://res.cloudinary.com/aremusmog/image/upload/v1591005556/wzirvt6pxao73k7m4uja.jpg"
 			}
 
 			var item = new Item(reqItem)
