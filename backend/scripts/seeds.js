@@ -2,6 +2,7 @@ require("dotenv").config()
 var seeder = require("mongoose-seed")
 var mongoose = require("mongoose")
 const { faker } = require("@faker-js/faker")
+
 const NUMBER_OF_ITEMS = 100
 
 seeder.connect(process.env.MONGODB_URI, () => {
